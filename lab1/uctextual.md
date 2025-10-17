@@ -29,7 +29,7 @@ Nessuno
 
 # Caso d'Uso 2: RICERCA NEL CATALOGO
 ## Breve Descrizione:  
-Possibilità di ricercare film/serie TV per titolo, autore, attori e tramite diversi filtri
+Possibilità di ricercare film/serie TV per titolo, regista, attori e tramite diversi filtri
 ## Attori primari: 
 - Tutti gli utenti
 ## Attori secondari: 
@@ -39,7 +39,7 @@ Trovarsi nella pagina web di StreamEveryThing
 ## Sequenza degli eventi principale:
 1. L'utente apre la pagina web StreamEveryThing 
 2. L'utente clicca sull'icona di ricerca
-3. L'utente digita Titolo/Autore/Attori del film/serie TV che sta cercando
+3. L'utente digita Titolo/Regista/Attori del film/serie TV che sta cercando
 4. L'utente, se necessario, filtra e/o ordina i risultati in base a data di uscita/titolo
 ## Postcondizioni:
 - La pagina mostra i risultati basandosi sui dati inseriti dall'utente
