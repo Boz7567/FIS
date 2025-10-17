@@ -1,4 +1,7 @@
+![alt-text](ucdiagram.png)
+
 # Caso d'Uso: LOGIN
+![alt-text](mockup1.png)
 ## Breve Descrizione: 
 Permesso di accesso al servizio non solo come utenti visitatori del sito 
 ## Attori primari: 
@@ -28,6 +31,7 @@ Nessuno
 
 
 # Caso d'Uso 2: RICERCA NEL CATALOGO
+![alt-text](mockup2.png)
 ## Breve Descrizione:  
 Possibilità di ricercare film/serie TV per titolo, regista, attori e tramite diversi filtri
 ## Attori primari: 
