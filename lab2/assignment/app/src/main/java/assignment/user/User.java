@@ -5,7 +5,9 @@ import java.util.List;
 
 import assignment.cart.Cart;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import java.util.Arrays; //don't know if I need it
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
