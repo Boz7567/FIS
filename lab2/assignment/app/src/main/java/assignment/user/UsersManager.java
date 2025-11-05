@@ -43,7 +43,6 @@ public class UsersManager {
     
     void removeEmptyTitlesFromUser(User user) {      
         List<String> titles = user.getTitles();
-        // for (int i = 0; i < titles.size(); i++) {
         for(int i = titles.size()-1; i>=0; i--)
           if (titles.get(i).isEmpty()) {
             titles.remove(i); 
@@ -61,13 +60,3 @@ public class UsersManager {
             throw e;
         }
     }
-
-
-
-
-
-
-
-
-
-}
