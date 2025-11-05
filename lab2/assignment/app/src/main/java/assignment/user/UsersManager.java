@@ -16,12 +16,12 @@ public class UsersManager {
 
     public static final String BASIC_USER_ID = "User00-"; //problema di Maintainability x2
     public static final List<User> users = new ArrayList<>(); //problema di Maintainability x2
-
+    private final String pwd = System.getenv("SECRET");
+    
 
     public boolean findUserFromDB(String userID) throws SQLException {
-        String pwd = System.getenv("SECRET");
-        PreparedStatement stmt;
-    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", BASIC_USER_ID+userID, pwd)) { //cambiato in BASIC_USER_ID, //problema di Security
+        PreparedStatement stmt = null;
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", BASIC_USER_ID+userID, pwd)) { //cambiato in BASIC_USER_ID, //problema di Security
             String query = "select firstname, lastname " + "from USERS where username="+ (BASIC_USER_ID+userID); //cambiato in BASIC_USER_ID
             stmt = conn.prepareStatement(query); //problema di Reliability
             ResultSet rs = stmt.executeQuery();
