@@ -20,19 +20,23 @@ public class UsersManager {
 
     public boolean findUserFromDB(String userID) throws SQLException {
         String pwd = System.getenv("SECRET");
+        PreparedStatement stmt;
     try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", BASIC_USER_ID+userID, pwd)) { //cambiato in BASIC_USER_ID, //problema di Security
             String query = "select firstname, lastname " + "from USERS where username="+ (BASIC_USER_ID+userID); //cambiato in BASIC_USER_ID
-            PreparedStatement stmt = conn.prepareStatement(query); //problema di Reliability
+            stmt = conn.prepareStatement(query); //problema di Reliability
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
-                if(rs != null)
-                    return true;
+                return true;    //problema di Maintainability
             return false;
 
 
 
         } catch (SQLException e) { //problema di Maintainability
             return false;
+        }
+        finally{
+            if(stmt != null) //don't know if I need this check
+                stmt.close();
         }
     }
 
@@ -43,7 +47,7 @@ public class UsersManager {
     
     void removeEmptyTitlesFromUser(User user) {      
         List<String> titles = user.getTitles();
-        for(int i = titles.size()-1; i>=0; i--)
+        for(int i = titles.size()-1; i>=0; i--){
           if (titles.get(i).isEmpty()) {
             titles.remove(i); 
           }
@@ -51,12 +55,6 @@ public class UsersManager {
     }
 
     void addCartToUser(User user, Cart cart) throws Exception{ //problema di Maintainability
-        try
-        {
-            user.linkCart(cart);
-        }
-        catch(Exception e)
-        {
-            throw e;
-        }
+        user.linkCart(cart);
     }
+}
