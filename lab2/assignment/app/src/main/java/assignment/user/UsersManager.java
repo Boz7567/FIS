@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import assignment.cart.Cart;
 
-import org.h2.security.SHA256;
+// import org.h2.security.SHA256;
 
 public class UsersManager {
 

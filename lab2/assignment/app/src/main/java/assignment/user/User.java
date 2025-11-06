@@ -8,13 +8,12 @@ import assignment.cart.Cart;
 import java.util.ArrayList;
 import java.util.Arrays; //don't know if I need it
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.sun.org.slf4j.internal.LoggerFactory;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class User {
+    private static final Logger logger = Logger.getLogger(User.class.getName());
+
     private String userID; 
     private String username; 
     private String firstname; 
@@ -90,8 +89,8 @@ public class User {
     }
 
     public void printUserInfo() {
-        // System.out.println("User Info: " + firstname + " " + lastname + " (Username: " + username + ")"); //problema di Maintainability
-        logger.info("User Info: " + firstname + " " + lastname + " (Username: " + username + ")");
+        String a = "User Info: " + firstname + " " + lastname + " (Username: " + username + ")";
+        logger.info(a);
     }
 
     public void linkCart(Cart cart) throws IllegalArgumentException{
@@ -107,12 +106,11 @@ public class User {
     public String printAllRoles(){
         return Arrays.toString(roles);  //problema di Reliability
     }
-    private static final Logger logger = LoggerFactory.getLogger(User.java);
 
     public void printEveryRole(){   //problema di Mantainability
         for (int i = roles.length; i > 0; i--){ //problema di Reliability
             // System.out.println(roles[i]);   //problema di Maintainability
-            logger.log(roles[i]);
+            logger.log(Level.INFO, roles[i]);
         }
     }
 
