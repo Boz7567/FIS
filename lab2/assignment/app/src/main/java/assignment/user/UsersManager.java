@@ -10,12 +10,10 @@ import java.util.ArrayList;
 
 import assignment.cart.Cart;
 
-// import org.h2.security.SHA256;
-
 public class UsersManager {
 
     public static final String BASIC_USER_ID = "User00-"; //problema di Maintainability x2
-    public static final List<User> users = new ArrayList<>(); //problema di Maintainability x2
+    protected static final List<User> users = new ArrayList<>(); //problema di Maintainability x2
     private final String pwd = System.getenv("SECRET");
     
 
@@ -54,7 +52,7 @@ public class UsersManager {
         }
     }
 
-    void addCartToUser(User user, Cart cart) throws Exception{ //problema di Maintainability
-        user.linkCart(cart);
+    void addCartToUser(User user, Cart cart) { //problema di Maintainability
+            user.linkCart(cart);
     }
 }
