@@ -26,7 +26,7 @@ public class Deposit extends Transaction {
       if (amount != CANCELED) {
          // request deposit envelope containing specified amount
          screen.displayMessage("\nPlease insert a deposit envelope containing ");
-         screen.displayEuroAmount(amount);
+         screen.displayEuroAmount(new Euro(amount));
          screen.displayMessageLine(".");
          // receive deposit envelope
          boolean envelopeReceived = depositSlot.isEnvelopeReceived();
@@ -38,7 +38,7 @@ public class Deposit extends Transaction {
                """;
             screen.displayMessageLine(msg);
             // credit account to reflect the deposit
-            bankDatabase.credit(getAccountNumber(), amount); 
+            bankDatabase.credit(getAccountNumber(), new Euro(amount)); 
          }
          else // deposit envelope not received
             screen.displayMessageLine( "\nYou did not insert an " +

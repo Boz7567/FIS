@@ -14,8 +14,9 @@ public class Screen
    }
 
    // display a euro amount
-   public void displayEuroAmount(double amount) {
-      System.out.printf("Euro %,.2f", amount);   
+   public void displayEuroAmount(Euro amount) {
+      // System.out.printf("Euro %,.2f", amount);   
+      System.out.print(amount.print());
    }
    
 }
