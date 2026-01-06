@@ -13,6 +13,11 @@ public class Account
       pin = thePIN;
       availableBalance = new Euro(theAvailableBalance.getValue());
       totalBalance = new Euro(theTotalBalance.getValue());
+      //or simply
+      /*
+      availableBalance = theAvailableBalance;
+      totalBalance = theTotalBalance;
+      */
    } 
 
    // determines whether a user-specified PIN matches PIN in Account
