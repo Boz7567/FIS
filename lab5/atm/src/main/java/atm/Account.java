@@ -8,15 +8,15 @@ public class Account
    private Euro availableBalance; // funds available for withdrawal
    private Euro totalBalance; // funds available + pending deposits
 
-   public Account(int theAccountNumber, int thePIN, double theAvailableBalance, double theTotalBalance) {
+   public Account(int theAccountNumber, int thePIN, Euro theAvailableBalance, Euro theTotalBalance) {
       accountNumber = theAccountNumber;
       pin = thePIN;
-      availableBalance = new Euro(theAvailableBalance);
-      totalBalance = new Euro(theTotalBalance);
-      //or simply
-      /*
       availableBalance = theAvailableBalance;
       totalBalance = theTotalBalance;
+      //or this?
+      /*
+      availableBalance = new Euro(theAvailableBalance.getValue());
+      totalBalance = new Euro(theTotalBalance.getValue());
       */
    } 
 

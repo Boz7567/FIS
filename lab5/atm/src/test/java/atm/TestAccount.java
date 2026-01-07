@@ -1,7 +1,7 @@
 package atm;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,8 +11,8 @@ public class TestAccount {
 
     @BeforeEach
     void setUp(){
-        a1 = new Account(11111, 22222, 200, 400);
-        a2 = new Account(22222, 11111, 500, 600);
+        a1 = new Account(11111, 22222, new Euro(200.0), new Euro(400.0));
+        a2 = new Account(22222, 11111, new Euro(500.0), new Euro(600.0));
     }
 
     @Test
